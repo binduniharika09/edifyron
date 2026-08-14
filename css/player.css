@@ -1,0 +1,507 @@
+/* ==========================================================================
+   EDIFYRON - CLASSROOM & VIDEO PLAYER STYLING
+   ========================================================================== */
+
+.classroom-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-body);
+}
+
+/* Classroom Top Bar */
+.classroom-header {
+  height: 60px;
+  background-color: #1c1d1f;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #2d2f31;
+}
+
+.classroom-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.classroom-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #d1d7dc;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.classroom-back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.classroom-divider {
+  width: 1px;
+  height: 24px;
+  background-color: #3e4143;
+}
+
+.classroom-course-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.classroom-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.course-progress-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #d1d7dc;
+}
+
+.progress-bar-track {
+  width: 120px;
+  height: 8px;
+  background-color: #3e4143;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #a435f0 0%, #06b6d4 100%);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+.certificate-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background-color: rgba(164, 53, 240, 0.2);
+  border: 1px solid #a435f0;
+  color: #ffffff;
+  border-radius: var(--radius-xs);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+
+.certificate-btn:hover {
+  background-color: #a435f0;
+}
+
+/* Classroom Main Split Body */
+.classroom-body {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.classroom-main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: var(--bg-body);
+}
+
+/* Video Stage */
+.video-stage-container {
+  background-color: #000000;
+  position: relative;
+  width: 100%;
+  max-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-element-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  background-color: #000000;
+}
+
+.main-video-player {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Custom Player Controls */
+.video-controls-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  padding: 16px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.video-element-wrapper:hover .video-controls-overlay {
+  opacity: 1;
+}
+
+.video-scrubber-track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  position: relative;
+  cursor: pointer;
+}
+
+.video-scrubber-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #a435f0;
+  border-radius: var(--radius-full);
+  width: 0%;
+}
+
+.video-scrubber-handle {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.video-scrubber-track:hover .video-scrubber-handle {
+  display: block;
+}
+
+.video-control-buttons-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+}
+
+.controls-left, .controls-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.player-btn {
+  color: #ffffff;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.video-time-display {
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+  color: #e5e7eb;
+}
+
+.playback-speed-select {
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-xs);
+  padding: 2px 6px;
+}
+
+.playback-speed-select option {
+  background-color: #1c1d1f;
+  color: #ffffff;
+}
+
+/* Classroom Tabs (Overview, Q&A, Notes, Announcements) */
+.classroom-tab-nav {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.classroom-tab-btn {
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.classroom-tab-btn:hover {
+  color: var(--text-main);
+}
+
+.classroom-tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.classroom-tab-content-panel {
+  padding: 32px 24px;
+  max-width: 900px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* Notes Feature */
+.note-creator-box {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background-color: var(--bg-card);
+  margin-bottom: 24px;
+}
+
+.note-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.saved-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saved-note-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background-color: var(--bg-surface);
+  display: flex;
+  gap: 14px;
+}
+
+.note-time-chip {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.775rem;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  height: fit-content;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.note-content-block {
+  flex-grow: 1;
+}
+
+.note-text {
+  font-size: 0.875rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.note-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Classroom Curriculum Sidebar */
+.classroom-curriculum-sidebar {
+  width: 380px;
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.sidebar-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-curriculum-list {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.sidebar-section-header {
+  padding: 14px 18px;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-lecture-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color var(--transition-fast);
+}
+
+.sidebar-lecture-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.sidebar-lecture-item.active {
+  background-color: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  font-weight: 700;
+}
+
+.sidebar-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.lecture-duration-tag {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Certificate Modal & Canvas */
+.certificate-preview-box {
+  background: #ffffff;
+  color: #1c1d1f;
+  border: 12px solid #5624d0;
+  padding: 40px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 20px;
+}
+
+.cert-header {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #5624d0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.cert-tagline {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #a435f0;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cert-presented-to {
+  font-size: 0.9rem;
+  color: #6a6f73;
+  margin-bottom: 8px;
+}
+
+.cert-student-name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1c1d1f;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.cert-course-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2d2f31;
+  margin-bottom: 24px;
+}
+
+.cert-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  color: #6a6f73;
+}
+
+@media (max-width: 900px) {
+  .classroom-body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .classroom-curriculum-sidebar {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+}

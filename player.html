@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edifyron Classroom - Engineering Labs</title>
+  <meta name="description" content="Edifyron Interactive Classroom. Watch lectures, take notes, track progress, and earn certificates. THE FUTURE STARTS HERE. MADE IN INDIA - MADE FOR INDIA.">
+  <link rel="icon" type="image/jpeg" href="assets/edifyron-logo.jpg">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/player.css">
+</head>
+<body class="classroom-page">
+
+  <!-- Classroom Top Bar -->
+  <header class="classroom-header">
+    <div class="classroom-header-left">
+      <a href="index.html" class="classroom-back-btn">
+        <img src="assets/edifyron-logo.jpg" alt="Logo" style="width: 28px; height: 28px; border-radius: var(--radius-full);">
+        <span>Back to Edifyron</span>
+      </a>
+      <div class="classroom-divider"></div>
+      <span class="classroom-course-title" id="classroomCourseTitle">Course Title</span>
+    </div>
+
+    <div class="classroom-header-right">
+      <div class="course-progress-widget">
+        <span id="courseProgressPctText">0% Complete</span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="courseProgressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <button class="certificate-btn" id="claimCertificateBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+        <span>Certificate</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Classroom Body: Split Video + Sidebar -->
+  <div class="classroom-body">
+    <!-- Main Content Video & Tabs -->
+    <div class="classroom-main-content">
+      <!-- Video Player Stage -->
+      <div class="video-stage-container">
+        <div class="video-element-wrapper">
+          <video id="mainClassroomVideo" class="main-video-player" playsinline></video>
+
+          <!-- Custom Video Controls Overlay -->
+          <div class="video-controls-overlay">
+            <div class="video-scrubber-track" id="videoScrubberTrack">
+              <div class="video-scrubber-progress" id="videoScrubberProgress"></div>
+              <div class="video-scrubber-handle"></div>
+            </div>
+
+            <div class="video-control-buttons-row">
+              <div class="controls-left">
+                <button class="player-btn" id="playerPlayPauseBtn" aria-label="Play / Pause">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </button>
+                <button class="player-btn" id="playerVolumeBtn" aria-label="Mute / Unmute">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                </button>
+                <span class="video-time-display" id="videoTimeDisplay">00:00 / 00:00</span>
+              </div>
+
+              <div class="controls-right">
+                <select id="playbackSpeedSelect" class="playback-speed-select" aria-label="Playback Speed">
+                  <option value="0.75">0.75x</option>
+                  <option value="1.0" selected>1.0x</option>
+                  <option value="1.25">1.25x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2.0">2.0x</option>
+                </select>
+
+                <button class="player-btn" id="playerFullscreenBtn" aria-label="Fullscreen">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Navigation Below Video -->
+      <nav class="classroom-tab-nav" aria-label="Classroom Sections">
+        <button class="classroom-tab-btn active" data-tab="tabOverview">Overview</button>
+        <button class="classroom-tab-btn" data-tab="tabNotes">Notes</button>
+        <button class="classroom-tab-btn" data-tab="tabQA">Q&amp;A Forum</button>
+        <button class="classroom-tab-btn" data-tab="tabAnnouncements">Announcements</button>
+      </nav>
+
+      <!-- Tab Content Panels -->
+      <div class="classroom-tab-content-panel">
+        
+        <!-- Tab 1: Overview -->
+        <div class="tab-pane active" id="tabOverview">
+          <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 10px;" id="currentLectureHeaderTitle">Lecture Overview</h2>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 20px;">
+            Follow along with the lecture, test your understanding, and mark the lecture as completed to track progress toward your verified Edifyron Certificate.
+          </p>
+
+          <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px;">
+            <h4 style="font-weight: 700; margin-bottom: 8px; color: var(--primary);">Code Files &amp; Starter Projects</h4>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button class="btn btn-outline-primary btn-sm" onclick="store.showToast('Downloaded starter-code.zip', 'success')">📦 Download C/C++/Java Code (.zip)</button>
+              <button class="btn btn-outline btn-sm" onclick="store.showToast('Opened lecture summary notes', 'info')">📄 Lecture Cheat Sheet (PDF)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Timestamped Notes -->
+        <div class="tab-pane" id="tabNotes">
+          <div class="note-creator-box">
+            <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">Create a timestamped note</h4>
+            <textarea id="newNoteTextInput" class="note-input" placeholder="Type key syntax insights or notes here..."></textarea>
+            <button class="btn btn-primary btn-sm" id="saveNoteBtn">Save Note</button>
+          </div>
+
+          <h4 style="font-weight: 700; margin-bottom: 14px;">Your Saved Notes</h4>
+          <div id="savedNotesList" class="saved-notes-list"></div>
+        </div>
+
+        <!-- Tab 3: Q&A Discussion Forum -->
+        <div class="tab-pane" id="tabQA">
+          <div class="note-creator-box">
+            <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 8px;">Ask a doubt to instructors &amp; peers</h4>
+            <input type="text" id="newQuestionInput" class="form-input" placeholder="E.g., How does free() know how much memory to deallocate in C?" style="margin-bottom: 10px;">
+            <button class="btn btn-primary btn-sm" id="submitQuestionBtn">Post Question</button>
+          </div>
+
+          <h4 style="font-weight: 700; margin-bottom: 14px;">Campus Doubts &amp; Answers</h4>
+          <div id="qaQuestionsContainer">
+            <div class="saved-note-card" style="margin-bottom: 12px;">
+              <div style="width: 36px; height: 36px; border-radius: var(--radius-full); background-color: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">AS</div>
+              <div style="flex-grow: 1;">
+                <div style="font-weight: 700; font-size: 0.9rem; margin-bottom: 4px;">Why does a dangling pointer cause a segmentation fault?</div>
+                <div style="font-size: 0.775rem; color: var(--text-secondary); margin-bottom: 6px;">Asked by Ayush Sharma &bull; IIT Roorkee</div>
+                <div style="background-color: var(--bg-surface); padding: 10px; border-radius: var(--radius-xs); font-size: 0.85rem; border-left: 3px solid var(--primary);">
+                  <strong>Prof. Rajesh:</strong> When memory is freed using free(ptr), the OS reclaims the page or marks it unallocated. Dereferencing ptr afterward accesses unmapped memory, causing a SIGSEGV.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Announcements -->
+        <div class="tab-pane" id="tabAnnouncements">
+          <div style="background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px;">
+            <div style="font-weight: 800; font-size: 1.05rem; margin-bottom: 4px; color: var(--primary);">🚀 Semester Placement Drive Notice</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">Posted by Lead Mentor &bull; 2 days ago</div>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+              Added 15 new LeetCode Medium problem walkthroughs in Section 2 for upcoming campus hiring drives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curriculum Sidebar Navigation -->
+    <aside class="classroom-curriculum-sidebar">
+      <div class="sidebar-header">
+        <span>Course Syllabus</span>
+      </div>
+      <div class="sidebar-curriculum-list" id="sidebarCurriculumList"></div>
+    </aside>
+  </div>
+
+  <!-- Dynamic Certificate Modal -->
+  <div class="modal-overlay" id="certificateModal">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Certificate of Completion</h3>
+        <button class="modal-close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="certificate-preview-box" id="certificateVisualBox" style="border: 8px solid #0284c7; background: #0f172a; color: #ffffff;">
+          <img src="assets/edifyron-logo.jpg" alt="" style="width: 54px; height: 54px; border-radius: 9999px; margin: 0 auto 10px; box-shadow: 0 0 16px rgba(2, 132, 199, 0.5);">
+          <div class="cert-header" style="color: #ffffff; font-weight: 900;">Certificate of Completion</div>
+          <div class="cert-tagline" style="color: #38bdf8;">EDIFYRON &bull; THE FUTURE STARTS HERE &bull; MADE IN INDIA</div>
+          
+          <div class="cert-presented-to" style="color: #94a3b8;">This is proudly awarded to</div>
+          <div class="cert-student-name" id="certStudentName" style="color: #ffffff; border-color: rgba(56, 189, 248, 0.3);">Rohan Verma</div>
+          
+          <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px;">for successfully mastering all modules and coding assessments in</div>
+          <div class="cert-course-title" id="certCourseName" style="color: #38bdf8;">C &amp; C++ Placement Masterclass</div>
+
+          <div class="cert-footer-row" style="border-color: rgba(56, 189, 248, 0.2); color: #94a3b8;">
+            <div>
+              <div style="font-weight: 800; color: #ffffff;" id="certInstructorName">Prof. Rajesh Sharma</div>
+              <div>Lead Instructor</div>
+            </div>
+            <div>
+              <div style="font-weight: 800; color: #ffffff;" id="certDateDisplay">February 2026</div>
+              <div>Date Completed</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8;" id="certIdDisplay">EDF-IND-948271</div>
+              <div>Verification ID</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: flex-end; margin-top: 16px;">
+          <button class="btn btn-outline" onclick="document.getElementById('certificateModal').classList.remove('active')">Close</button>
+          <button class="btn btn-primary" id="downloadCertBtn">🖨️ Print / Download PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/player.js"></script>
+</body>
+</html>
