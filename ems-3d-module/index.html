@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy Management System (EMS) - Industrial Smart Platform</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/ems-style.css" />
+
+  <!-- 3D & Analytics Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="app-container">
+    <!-- 3D Canvas Viewport -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Floating 3D Callout Cards Layer -->
+    <div id="labels-container"></div>
+
+    <!-- UI Overlay Shell -->
+    <div class="ui-layer">
+      <!-- TOP HEADER BAR -->
+      <header class="header-bar interactive">
+        <div class="header-brand">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-title-wrap">
+            <div class="brand-main-title">
+              ENERGY MANAGEMENT SYSTEM (EMS)
+            </div>
+            <div class="brand-sub-title">INDUSTRIAL SMART PLATFORM</div>
+          </div>
+        </div>
+
+        <!-- Top Live KPI Badges -->
+        <div class="header-kpi-bar">
+          <!-- KPI 1: Total Connected Load -->
+          <div class="kpi-chip">
+            <div class="kpi-icon-wrap">⚡</div>
+            <div class="kpi-data-wrap">
+              <span class="kpi-label">Total Connected Load</span>
+              <span class="kpi-value" id="top-total-load">10,394 <span class="unit">kW</span></span>
+            </div>
+          </div>
+
+          <!-- KPI 2: Total Consumption (Month) -->
+          <div class="kpi-chip">
+            <div class="kpi-icon-wrap">📊</div>
+            <div class="kpi-data-wrap">
+              <span class="kpi-label">Total Consumption (Month)</span>
+              <span class="kpi-value">3,84,791 <span class="unit">kWh</span></span>
+            </div>
+          </div>
+
+          <!-- KPI 3: Total Units (Month) -->
+          <div class="kpi-chip">
+            <div class="kpi-icon-wrap">🏭</div>
+            <div class="kpi-data-wrap">
+              <span class="kpi-label">Total Units (Month)</span>
+              <span class="kpi-value">3,84,791 <span class="unit">kWh</span></span>
+            </div>
+          </div>
+
+          <!-- KPI 4: Power Factor (Avg) -->
+          <div class="kpi-chip">
+            <div class="kpi-icon-wrap green">⏲️</div>
+            <div class="kpi-data-wrap">
+              <span class="kpi-label">Power Factor (AVG)</span>
+              <span class="kpi-value">0.97 <span class="status-tag">Leading</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header Right: Date, Time, Status -->
+        <div class="header-meta">
+          <div class="datetime-box">
+            <div class="date-part">
+              <span>📅</span>
+              <span id="live-date">13 May 2025 Tuesday</span>
+            </div>
+            <div class="time-part">
+              <span>🕒</span>
+              <span id="live-clock">11:35:42 AM</span>
+            </div>
+          </div>
+          <div class="live-indicator">
+            <span class="live-dot"></span>
+            <span>LIVE</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN DASHBOARD BODY (Left Sidebar + Right Panel) -->
+      <main class="main-body">
+        <!-- LEFT NAVIGATION SIDEBAR -->
+        <aside class="sidebar-nav interactive">
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">🏠</span>
+                <span>Overview</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">▦</span>
+                <span>Dashboard</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">📈</span>
+                <span>Energy Analytics</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">📋</span>
+                <span>Unit Wise View</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">⚙️</span>
+                <span>Equipment View</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">⚡</span>
+                <span>Power Quality</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">🔔</span>
+                <span>Alarm & Events</span>
+              </div>
+              <span class="nav-badge">1</span>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">📄</span>
+                <span>Reports</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">📊</span>
+                <span>Trends</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">⚖️</span>
+                <span>Compare Units</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">₹</span>
+                <span>Energy Cost</span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">🌱</span>
+                <span>CO₂ Emission</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="sidebar-footer">
+            <div class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">⚙️</span>
+                <span>Settings</span>
+              </div>
+            </div>
+            <div class="nav-item">
+              <div class="nav-item-left">
+                <span class="nav-item-icon">🚪</span>
+                <span>Logout</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RIGHT ANALYTICS PANEL -->
+        <aside class="right-panel interactive">
+          <!-- Section 1: Live Energy Flow -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <span>Energy Flow (Live)</span>
+            </div>
+            <div class="energy-flow-box">
+              <div class="flow-node">
+                <span class="flow-icon">🗼</span>
+                <span class="flow-node-title">Grid</span>
+                <span class="flow-node-val" id="flow-grid-val">10,394 kW</span>
+              </div>
+              <div class="flow-arrow-wrap">
+                <div class="flow-arrow-line">
+                  <div class="flow-particle"></div>
+                </div>
+              </div>
+              <div class="flow-node">
+                <span class="flow-icon">⚡</span>
+                <span class="flow-node-title">Energy Hub</span>
+                <span class="flow-node-val" style="color: #00e676;">33 kV</span>
+              </div>
+              <div class="flow-arrow-wrap">
+                <div class="flow-arrow-line">
+                  <div class="flow-particle"></div>
+                </div>
+              </div>
+              <div class="flow-node">
+                <span class="flow-icon">🏭</span>
+                <span class="flow-node-title">Total Units</span>
+                <span class="flow-node-val" id="flow-units-val">10,394 kW</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Key Metrics (Total) -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <span>Key Metrics (Total)</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-left">
+                <div class="metric-icon-circle">⚡</div>
+                <span class="metric-title">Total Connected Load</span>
+              </div>
+              <span class="metric-value" id="metric-total-load">10,394 kW</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-left">
+                <div class="metric-icon-circle">🎯</div>
+                <span class="metric-title">Contracted Maximum Demand</span>
+              </div>
+              <span class="metric-value">1,400 kVA</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-left">
+                <div class="metric-icon-circle">₹</div>
+                <span class="metric-title">Total Monthly Consumption</span>
+              </div>
+              <span class="metric-value">3,84,791 kWh</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-left">
+                <div class="metric-icon-circle">⏲️</div>
+                <span class="metric-title">Average PF</span>
+              </div>
+              <span class="metric-value">0.97</span>
+            </div>
+          </div>
+
+          <!-- Section 3: Environment Impact -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <span>Environment Impact</span>
+            </div>
+            <div class="impact-grid">
+              <div class="impact-cell">
+                <span class="impact-icon">🍃</span>
+                <div>
+                  <div class="impact-num">21.35</div>
+                  <div class="impact-label">CO₂ Saved (Tonnes)</div>
+                </div>
+              </div>
+              <div class="impact-cell">
+                <span class="impact-icon">🌳</span>
+                <div>
+                  <div class="impact-num">15.32</div>
+                  <div class="impact-label">Equivalent Trees</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: System Status -->
+          <div class="panel-card">
+            <div class="panel-title">
+              <span>System Status</span>
+            </div>
+            <div class="status-list">
+              <div class="status-pill">
+                <span class="status-icon-dot" style="color:#00e676;">✔</span>
+                <span>All Systems Normal</span>
+              </div>
+              <div class="status-pill">
+                <span class="status-icon-dot" style="color:#ffc107;">☀️</span>
+                <span>Solar Generation <b style="color:#00e676;">ON</b></span>
+              </div>
+              <div class="status-pill">
+                <span class="status-icon-dot" style="color:#00e5ff;">⚡</span>
+                <span>Grid Supply <b style="color:#00e676;">ONLINE</b></span>
+              </div>
+            </div>
+            <div class="status-action-row">
+              <button class="btn-action">
+                <span>📑</span>
+                <span>Generate Report</span>
+              </button>
+              <button class="btn-action">
+                <span>⚠️</span>
+                <span>Cost Analysis</span>
+              </button>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <!-- BOTTOM 3D CAMERA & SIMULATION CONTROLS BAR -->
+      <div class="bottom-control-bar interactive">
+        <div class="cam-btn-group">
+          <button class="cam-btn active" data-preset="isometric"><span>📐</span> Isometric</button>
+          <button class="cam-btn" data-preset="topdown"><span>🌐</span> Aerial</button>
+          <button class="cam-btn" data-preset="front"><span>🏢</span> Campus Front</button>
+          <button class="cam-btn" data-preset="hub"><span>⚡</span> 33kV Hub</button>
+        </div>
+
+        <div class="divider-v"></div>
+
+        <button class="toggle-btn" id="btn-toggle-theme">
+          <span>🌙</span> <span>Night Mode</span>
+        </button>
+
+        <button class="toggle-btn active" id="btn-toggle-conduits">
+          <span>⚡</span> <span>Energy Beams</span>
+        </button>
+
+        <button class="toggle-btn" id="btn-auto-rotate">
+          <span>🔄</span> <span>Auto Rotate</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MODAL OVERLAY & UNIT DETAIL MODAL -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="detail-modal" id="detail-modal">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-badge" id="modal-badge">1</div>
+          <div>
+            <div class="modal-title" id="modal-title">PEB Structure Manufacturing</div>
+            <div class="modal-subtitle" id="modal-subtitle">Heavy Structural Steel Pre-Engineered Buildings</div>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      </div>
+
+      <div class="modal-stats-grid">
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">Max Demand</div>
+          <div class="modal-stat-value" id="modal-max-demand" style="color:#69f0ae;">150 kVA</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">Connected Load</div>
+          <div class="modal-stat-value" id="modal-connected-load" style="color:#00e5ff;">679 kW</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">Power Factor</div>
+          <div class="modal-stat-value" id="modal-pf" style="color:#ffd54f;">0.96</div>
+        </div>
+        <div class="modal-stat-card">
+          <div class="modal-stat-label">Monthly Consumption</div>
+          <div class="modal-stat-value" id="modal-consumption">38,550 kWh</div>
+        </div>
+      </div>
+
+      <!-- Historical Consumption Chart -->
+      <div style="margin-bottom: 14px;">
+        <div style="font-size: 11px; font-weight: 700; color: #8fa5c4; text-transform: uppercase; margin-bottom: 6px;">
+          Monthly Power Trend (kWh)
+        </div>
+        <div style="height: 120px; width: 100%;">
+          <canvas id="unit-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Major Equipment Load Breakdown -->
+      <div>
+        <div style="font-size: 11px; font-weight: 700; color: #8fa5c4; text-transform: uppercase;">
+          High-Consumption Equipment Breakdown
+        </div>
+        <table class="equipment-table">
+          <thead>
+            <tr>
+              <th>Equipment / Machine</th>
+              <th>Rating (kW)</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="modal-equipment-body">
+            <!-- Populated dynamically via JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-primary" id="modal-focus-btn">🔍 Focus 3D Camera</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/scene3d.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
