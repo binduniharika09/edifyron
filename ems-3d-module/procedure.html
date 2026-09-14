@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Industrial EMS 3D Digital Twin - Project Procedure</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 14mm 16mm 14mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a202c;
+      background: #ffffff;
+      line-height: 1.5;
+      font-size: 11pt;
+    }
+
+    /* Header Banner */
+    .header-banner {
+      background: linear-gradient(135deg, #07111e 0%, #0d233a 100%);
+      color: #ffffff;
+      padding: 24px 28px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      border-left: 6px solid #00e676;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      background: rgba(0, 230, 118, 0.2);
+      color: #00e676;
+      border: 1px solid rgba(0, 230, 118, 0.4);
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 24px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 9pt;
+      color: #cbd5e1;
+    }
+
+    .meta-item strong {
+      color: #00e5ff;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-size: 13pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 .phase-num {
+      background: #0f172a;
+      color: #fff;
+      font-size: 9pt;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin-bottom: 8px;
+      color: #334155;
+      font-size: 10pt;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 10px;
+      color: #334155;
+      font-size: 10pt;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 8.5pt;
+    }
+
+    th {
+      background: #0f172a;
+      color: #ffffff;
+      text-align: left;
+      padding: 7px 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      font-size: 7.5pt;
+    }
+
+    td {
+      padding: 6px 9px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    tr.total-row td {
+      background: #e6fffa;
+      font-weight: 800;
+      color: #0f766e;
+      border-top: 2px solid #0d9488;
+      border-bottom: 2px solid #0d9488;
+    }
+
+    .num-col {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+
+    /* Highlight Callouts */
+    .callout {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 9.5pt;
+      color: #166534;
+    }
+
+    .callout-blue {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-left: 4px solid #0284c7;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 9.5pt;
+      color: #0369a1;
+    }
+
+    /* Tech Stack Grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0;
+    }
+
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      background: #f8fafc;
+    }
+
+    .card-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
+    }
+
+    .card-body {
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      background: #e2e8f0;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #0f172a;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* Footer text */
+    .doc-footer {
+      margin-top: 24px;
+      padding-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 8pt;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COVER / HEADER BANNER -->
+  <div class="header-banner">
+    <div class="badge-tag">Technical Project Report & Standard Operating Procedure</div>
+    <h1>Energy Management System (EMS)<br>3D Smart Industrial Digital Twin</h1>
+    <div class="subtitle">Complete Step-by-Step Procedure: Modeling, 3D Graphics Engineering, HUD Projection & Cloud Deployment</div>
+    <div class="meta-row">
+      <div class="meta-item">Platform: <strong>Three.js / WebGL 2.0</strong></div>
+      <div class="meta-item">Source: <strong>Image 1 (Specs) & Image 2 (EMS Dashboard)</strong></div>
+      <div class="meta-item">Repository: <strong>binduniharika09/energy-management-system</strong></div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE SUMMARY -->
+  <h2><span class="phase-num">00</span> Executive Summary</h2>
+  <p>
+    This document outlines the complete engineering workflow undertaken to build the interactive <strong>3D Industrial Smart Campus</strong> and <strong>Energy Management System (EMS)</strong>. The project transforms raw electrical consumption telemetry and contract demand parameters from a 12-division industrial matrix (Image 1) into an interactive, real-time 3D digital twin platform (Image 2) with animated power conduits, dynamic camera controls, and analytical diagnostic drawers.
+  </p>
+
+  <!-- PHASE 1 -->
+  <h2><span class="phase-num">01</span> Phase 1: Requirements Analysis & Telemetry Extraction</h2>
+  <p>
+    The initial step involved extracting and mathematically verifying the operational parameters for all 12 industrial manufacturing units given in <strong>Image 1</strong>. The total connected load across all 12 units sums exactly to <strong>10,394 kW</strong>, matching the live primary telemetry KPI displayed in <strong>Image 2</strong>.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:5%">#</th>
+        <th style="width:34%">Division Name</th>
+        <th style="width:15%">Max Demand (kVA)</th>
+        <th style="width:15%">Connected Load (kW)</th>
+        <th style="width:10%">PF</th>
+        <th style="width:21%">Monthly Cons. (kWh)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>PEB Structure Manufacturing</td>
+        <td class="num-col">150</td>
+        <td class="num-col">679</td>
+        <td class="num-col">0.96</td>
+        <td class="num-col">38,550</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>ROB Structure Manufacturing</td>
+        <td class="num-col">100</td>
+        <td class="num-col">532</td>
+        <td class="num-col">0.95</td>
+        <td class="num-col">10,718</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>CNG Booster compressor manufacturing</td>
+        <td class="num-col">40</td>
+        <td class="num-col">67</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">5,432</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Fastners manufacturing unit</td>
+        <td class="num-col">180</td>
+        <td class="num-col">718</td>
+        <td class="num-col">0.95</td>
+        <td class="num-col">33,059</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Transmision Tower manufacturing unit</td>
+        <td class="num-col">250</td>
+        <td class="num-col">1,523</td>
+        <td class="num-col">0.95</td>
+        <td class="num-col">39,709</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Solar Structure Manufacturing</td>
+        <td class="num-col">120</td>
+        <td class="num-col">990</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">20,070</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Scaffolding fabrication unit</td>
+        <td class="num-col">98</td>
+        <td class="num-col">453</td>
+        <td class="num-col">0.98</td>
+        <td class="num-col">25,712</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Signboard manufacturing unit</td>
+        <td class="num-col">25</td>
+        <td class="num-col">134</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">3,426</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Galvanising Unit</td>
+        <td class="num-col">120</td>
+        <td class="num-col">551</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">98,437</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Small arm manufacturing unit</td>
+        <td class="num-col">60</td>
+        <td class="num-col">161</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">3,487</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Composite unit</td>
+        <td class="num-col">100</td>
+        <td class="num-col">2,188</td>
+        <td class="num-col">0.99</td>
+        <td class="num-col">20,900</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Shelters manufacturing unit</td>
+        <td class="num-col">120</td>
+        <td class="num-col">2,398</td>
+        <td class="num-col">0.98</td>
+        <td class="num-col">37,695</td>
+      </tr>
+      <tr class="total-row">
+        <td>Σ</td>
+        <td>Total / Campus Aggregates</td>
+        <td class="num-col">1,263 kVA (1,400 Cont.)</td>
+        <td class="num-col">10,394 kW</td>
+        <td class="num-col">0.97 Avg</td>
+        <td class="num-col">3,84,791 kWh</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- PHASE 2 -->
+  <h2><span class="phase-num">02</span> Phase 2: Tech Stack & System Architecture</h2>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Core 3D Engine: Three.js (r128)</div>
+      <div class="card-body">High-performance WebGL 2.0 renderer capable of rendering multi-mesh scenes, PBR materials, soft directional shadows, and bloom post-processing at steady 60 FPS across desktop and mobile.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Navigation: OrbitControls</div>
+      <div class="card-body">Constrained orbital camera system supporting smooth 360° rotational inspection, responsive zooming, and clamped polar angles to prevent subterranean camera clipping.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Animation: Tween.js</div>
+      <div class="card-body">Interpolates camera positions and look-at target vectors using cubic-out easing curves for cinematic fly-to transitions when selecting industrial buildings.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Visualization: Chart.js</div>
+      <div class="card-body">Lightweight canvas charting framework for rendering historical monthly consumption profiles, load fluctuations, and equipment telemetry in the unit inspection modal.</div>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- PHASE 3 -->
+  <h2><span class="phase-num">03</span> Phase 3: Spatial Coordinate Modeling & Data Structuring</h2>
+  <p>
+    The industrial campus follows a radial layout centered on the 33 kV substation. In <code>js/data.js</code>, each unit was assigned a radial distance ($r$) and an angular orientation ($\theta$) matching the circular layout of Image 2:
+  </p>
+  <div class="callout-blue">
+    <strong>Spatial Transformation Formula:</strong><br>
+    $$X = r \cdot \cos(\theta_{\text{rad}}), \quad Z = -r \cdot \sin(\theta_{\text{rad}}), \quad \text{Rotation}_Y = -\theta_{\text{rad}} + \frac{\pi}{2}$$
+    This formula places each factory along the ring road and automatically orients the factory's front loading apron towards the center of the campus.
+  </div>
+
+  <!-- PHASE 4 -->
+  <h2><span class="phase-num">04</span> Phase 4: 3D Scene Engineering (`js/scene3d.js`)</h2>
+
+  <h3>1. Central 33 kV Energy Hub Substation</h3>
+  <ul>
+    <li><strong>Energy Reactor Core:</strong> Modeled with an illuminated neon green cylinder (<code>#00e676</code>) housed inside a transparent refractive glass cylinder.</li>
+    <li><strong>Dual Gyro Rings:</strong> Two counter-rotating holographic torus rings that spin on the X/Y axes during runtime.</li>
+    <li><strong>Transformer Banks:</strong> Four 3D step-down oil transformer tanks with cooling radiators and high-voltage bushing insulators.</li>
+    <li><strong>Lattice Gantry Towers:</strong> Structural lattice pylons, crossbeams, and busbar insulator strings.</li>
+  </ul>
+
+  <h3>2. 12 Parametric Manufacturing Units</h3>
+  <ul>
+    <li><strong>Industrial Warehouses:</strong> Modeled with pitched steel roof frames, industrial cladding, roll-up loading bays, and glass clerestory windows.</li>
+    <li><strong>Photovoltaic Solar Arrays:</strong> High-density photovoltaic panels mounted across the roofs, matching Image 2's clean-energy campus design.</li>
+    <li><strong>Distinct Structural Props:</strong> High-tonnage gantry cranes for Units 1 & 2; gas storage tanks for Unit 3; exhaust chimneys for Units 4 & 9; prototype transmission towers for Unit 5; autoclave curing chambers for Unit 11.</li>
+  </ul>
+
+  <h3>3. Dynamic Glowing Energy Conduit Beams</h3>
+  <ul>
+    <li>Constructed 3D <code>QuadraticBezierCurve3</code> splines arching upward from the central hub into each factory's step-down transformer box.</li>
+    <li>Generated animated particle spheres that traverse the curves continuously, producing a live visual energy pulse.</li>
+  </ul>
+
+  <h3>4. Campus Landscaping & Perimeter Forest</h3>
+  <ul>
+    <li>Concentric asphalt road rings (inner loop and outer highway) and 12 radial connection streets.</li>
+    <li>Surrounding forest of 380+ procedural 3D conifers and deciduous trees with randomized green foliage shaders.</li>
+  </ul>
+
+  <!-- PHASE 5 -->
+  <h2><span class="phase-num">05</span> Phase 5: 3D-to-2D Projected UI HUD & Marker Occlusion</h2>
+  <p>
+    Floating callout cards were overlaid on the 3D scene using screen coordinate projection:
+  </p>
+  <ul>
+    <li><strong>World-to-Screen Mapping:</strong> In each render frame, building 3D coordinates $(X, Y, Z)$ are projected using <code>vector.project(camera)</code> to calculate 2D viewport coordinates $(x, y)$.</li>
+    <li><strong>Frustum Occlusion Elimination:</strong> A vector dot product check with the camera's forward vector ($\vec{d}_{\text{cam}} \cdot \vec{d}_{\text{obj}} \le 0$) hides labels when their building moves behind the camera viewpoint, preventing UI inversion.</li>
+  </ul>
+
+  <!-- PHASE 6 -->
+  <h2><span class="phase-num">06</span> Phase 6: Interactive Dashboard & Diagnostics (`js/app.js`)</h2>
+  <ul>
+    <li><strong>Header Telemetry:</strong> Live aggregated metrics (10,394 kW Load, 3,84,791 kWh Consumption, 0.97 Avg PF, Live Date/Clock).</li>
+    <li><strong>Right Analytics Panel:</strong> Animated live energy flow schematic (`Grid <-> Hub <-> Units`), environment impact (`21.35 Tonnes CO₂ Saved`), and status flags.</li>
+    <li><strong>Diagnostic Inspection Drawer:</strong> Clicking any unit flies the 3D camera to that building and opens a modal with equipment load ratings and historical consumption charts.</li>
+    <li><strong>Simulation Ticker:</strong> Simulates realistic $\pm 1.5\%$ micro-fluctuations in electrical loads to provide a living digital twin experience.</li>
+  </ul>
+
+  <!-- PHASE 7 -->
+  <h2><span class="phase-num">07</span> Phase 7: Version Control & GitHub Pages Deployment</h2>
+  <ol>
+    <li>Extracted the 3D module into a dedicated branch using <code>git subtree split --prefix=ems-3d-module -b ems-release</code>.</li>
+    <li>Pushed the branch directly to the root of the new GitHub repository: <strong><code>https://github.com/binduniharika09/energy-management-system.git</code></strong>.</li>
+    <li>Configured GitHub Pages to serve the 3D platform live from the <code>main</code> branch root:
+      <br><strong><code>https://binduniharika09.github.io/energy-management-system/</code></strong>
+    </li>
+  </ol>
+
+  <div class="doc-footer">
+    <div>Project: Smart Industrial EMS 3D Digital Twin</div>
+    <div>Author: Edifyron Team & Antigravity AI</div>
+    <div>Status: Production Ready / Deployed</div>
+  </div>
+
+</body>
+</html>
