@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edifyron - THE FUTURE STARTS HERE | India's Engineering Learning Platform</title>
-  <meta name="description" content="Edifyron - Master Python, Java, C, C++, Data Structures & Algorithms, and Core CS for campus placements. THE FUTURE STARTS HERE. MADE IN INDIA - MADE FOR INDIA.">
+  <title>Edifyron — THE FUTURE STARTS HERE | Engineering Learning Platform</title>
+  <meta name="description" content="Edifyron — Master Python, Java, C, C++, Data Structures & Algorithms, and Core CS. THE FUTURE STARTS HERE. MADE IN INDIA — MADE FOR INDIA.">
   <link rel="icon" type="image/jpeg" href="assets/edifyron-logo.jpg">
   
   <!-- CSS Stylesheets -->
@@ -17,7 +17,7 @@
   <!-- ==========================================================================
        TWO-PHASE CINEMATIC BRAND MOTION INTRO SCREEN
        Phase 1: EDIFYRON + THE FUTURE STARTS HERE
-       Phase 2: MADE IN INDIA — MADE FOR INDIA (with Tricolor Aura & Chakra)
+       Phase 2: MADE IN INDIA — MADE FOR INDIA
        ========================================================================== -->
   <div class="brand-motion-intro" id="brandMotionIntro">
     <div class="intro-stage-container">
@@ -46,11 +46,11 @@
     <button class="skip-intro-btn" id="skipIntroBtn">Skip Intro &rarr;</button>
   </div>
 
-  <!-- Top Announcement Promo Bar -->
+  <!-- Top Announcement Promo Bar (Aesthetic Minimalist) -->
   <div class="top-promo-bar" id="topPromoBar">
-    <span>🇮🇳 <strong>Engineering Student Special:</strong> Flat 50% Off on all C, C++, Java, Python &amp; DSA tracks! Code:</span>
+    <span>Engineering Student Scholarship: 50% Off with code</span>
     <span class="promo-code-pill">FUTURE50</span>
-    <button class="replay-intro-btn btn-ghost btn-sm" style="color: #ffffff; font-weight: 800; text-decoration: underline; margin-left: 8px;">🎬 Replay Intro</button>
+    <button class="replay-intro-btn btn-ghost btn-sm" style="color: var(--accent-cyan); font-weight: 600; text-decoration: underline; margin-left: 6px;">🎬 Replay Intro</button>
     <button class="top-promo-close" onclick="document.getElementById('topPromoBar').style.display='none'">&times;</button>
   </div>
 
@@ -70,7 +70,7 @@
       <div class="nav-categories-wrapper">
         <button class="categories-btn btn-ghost" id="categoriesBtn">
           <span>Subjects</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
 
         <div class="mega-menu-dropdown" id="megaMenuDropdown">
@@ -83,8 +83,8 @@
       <div class="nav-search-container">
         <form id="globalSearchForm">
           <div class="search-input-wrapper">
-            <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="globalSearchInput" class="search-input" placeholder="Search Python, Java, C, C++, DSA, DBMS, Placements..." autocomplete="off">
+            <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="globalSearchInput" class="search-input" placeholder="Search Python, Java, C, C++, DSA, DBMS..." autocomplete="off">
             <span class="search-kbd-shortcut">/</span>
           </div>
         </form>
@@ -94,15 +94,15 @@
 
       <!-- Nav Links & Quick Actions -->
       <div class="nav-actions">
-        <a href="#arenaSection" class="nav-link" style="color: var(--primary); font-weight: 700;">🎮 Quiz Arena</a>
-        <a href="#skillReelsSection" class="nav-link">⚡ 30s Reels</a>
-        <a href="courses.html" class="nav-link">All Courses</a>
-        <a href="player.html?id=c1" class="nav-link" title="My Learning Portal">My Learning</a>
+        <a href="#arenaSection" class="nav-link">Arena</a>
+        <a href="#skillReelsSection" class="nav-link">Reels</a>
+        <a href="courses.html" class="nav-link">Catalog</a>
+        <a href="player.html?id=c1" class="nav-link" title="My Learning Portal">Classroom</a>
 
         <!-- Wishlist Trigger -->
         <div class="action-btn-wrapper">
           <button class="nav-icon-btn" id="wishlistNavBtn" aria-label="View Wishlist">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
             <span class="counter-badge" id="wishlistCountBadge" style="display: none;">0</span>
           </button>
         </div>
@@ -110,14 +110,14 @@
         <!-- Cart Trigger -->
         <div class="action-btn-wrapper">
           <button class="nav-icon-btn" id="cartNavBtn" aria-label="View Cart">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
             <span class="counter-badge" id="cartCountBadge" style="display: none;">0</span>
           </button>
         </div>
 
         <!-- Theme Toggle -->
         <button class="nav-icon-btn" id="themeToggleBtn" aria-label="Toggle theme">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
 
         <!-- User Avatar -->
@@ -149,7 +149,7 @@
 
   <!-- Main Content Area -->
   <main>
-    <!-- Hero Slider (Engineering Focus) -->
+    <!-- Hero Slider (Aesthetic Dark Glass) -->
     <section class="hero-wrapper">
       <div class="container">
         <div class="hero-slider-container">
@@ -159,14 +159,14 @@
             <div class="hero-overlay"></div>
             <div class="hero-content-box">
               <div class="hero-tagline-lead">
-                <span>🇮🇳</span>
-                <span>MADE IN INDIA &bull; THE FUTURE STARTS HERE</span>
+                <span>⚡</span>
+                <span>THE FUTURE STARTS HERE &bull; MADE IN INDIA</span>
               </div>
-              <h1 class="hero-title">Master <span>C, C++, Java &amp; Python</span> for Campus Placements</h1>
-              <p class="hero-desc">Built specifically for Indian engineering students (B.Tech / BCA / MCA). Crack top product companies and service firms with deep conceptual clarity.</p>
+              <h1 class="hero-title">Architecting India's Next Generation of <span>Software Engineers</span></h1>
+              <p class="hero-desc">Master C, C++, Java, Python, and Data Structures with low-level systems clarity for technical interviews.</p>
               <div class="hero-actions">
-                <a href="#skillTabsSection" class="btn btn-primary btn-lg">Explore Masterclasses (from ₹349)</a>
-                <a href="#arenaSection" class="btn btn-outline btn-lg">Play Code Quizzes</a>
+                <a href="#skillTabsSection" class="btn btn-primary btn-lg">Explore Masterclasses &rarr;</a>
+                <a href="#arenaSection" class="btn btn-outline btn-lg">Launch Arena</a>
               </div>
             </div>
           </div>
@@ -176,11 +176,11 @@
             <div class="hero-overlay"></div>
             <div class="hero-content-box">
               <div class="hero-tagline-lead">
-                <span>⚡</span>
+                <span>🧠</span>
                 <span>DATA STRUCTURES &amp; ALGORITHMS</span>
               </div>
-              <h2 class="hero-title">Crack <span>DSA Coding Rounds</span> with LeetCode Top 150</h2>
-              <p class="hero-desc">Master Two Pointers, Dynamic Programming, Trees &amp; Graphs in C++ and Java with step-by-step visualizations.</p>
+              <h2 class="hero-title">Master <span>Algorithms &amp; System Patterns</span> with Precision</h2>
+              <p class="hero-desc">Deep dive into Two-Pointers, Dynamic Programming, Graphs, and Tree Traversal algorithms.</p>
               <div class="hero-actions">
                 <a href="course-details.html?id=c4" class="btn btn-primary btn-lg">View DSA Masterclass &rarr;</a>
                 <a href="courses.html?category=dsa-placements" class="btn btn-outline btn-lg">All DSA Tracks</a>
@@ -194,23 +194,23 @@
             <div class="hero-content-box">
               <div class="hero-tagline-lead">
                 <span>☕</span>
-                <span>ENTERPRISE BACKEND ENGINEERING</span>
+                <span>ENTERPRISE ARCHITECTURE</span>
               </div>
-              <h2 class="hero-title">Build High-Scale <span>Java &amp; Spring Boot</span> Systems</h2>
-              <p class="hero-desc">JVM architecture, multithreading, REST APIs, JPA and Microservices for backend developer placement drives.</p>
+              <h2 class="hero-title">Build High-Concurrency <span>Java 21 &amp; Spring</span> Microservices</h2>
+              <p class="hero-desc">From JVM internals and garbage collection tuning to asynchronous RESTful architectures.</p>
               <div class="hero-actions">
                 <a href="course-details.html?id=c2" class="btn btn-primary btn-lg">Java Masterclass &rarr;</a>
-                <a href="courses.html?category=programming" class="btn btn-outline btn-lg">All Programming</a>
+                <a href="courses.html?category=programming" class="btn btn-outline btn-lg">All Tracks</a>
               </div>
             </div>
           </div>
 
           <!-- Navigation Controls -->
           <button class="slider-btn prev" id="heroPrevBtn" aria-label="Previous Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
           <button class="slider-btn next" id="heroNextBtn" aria-label="Next Slide">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
           </button>
 
           <div class="hero-slider-dots" id="heroSliderDots"></div>
@@ -224,19 +224,19 @@
         <div class="stats-grid">
           <div>
             <div class="stat-number">500+</div>
-            <div class="stat-label">Indian Engineering Colleges</div>
+            <div class="stat-label">Indian Engineering Campuses</div>
           </div>
           <div>
             <div class="stat-number">2.5M+</div>
-            <div class="stat-label">B.Tech Students Learning</div>
+            <div class="stat-label">Active Student Engineers</div>
           </div>
           <div>
             <div class="stat-number">₹349</div>
-            <div class="stat-label">Affordable Student Pricing</div>
+            <div class="stat-label">Student Accessible Pricing</div>
           </div>
           <div>
             <div class="stat-number">96%</div>
-            <div class="stat-label">Placement Technical Clear Rate</div>
+            <div class="stat-label">Technical Placement Rate</div>
           </div>
         </div>
       </div>
@@ -248,9 +248,9 @@
     <section class="section" id="arenaSection">
       <div class="container">
         <div class="section-heading-group">
-          <div class="brand-tagline-badge">🎮 Interactive Code Arena</div>
-          <h2 class="section-title" style="margin-top: 8px;">Engineering Quizzes &amp; Live Leaderboard</h2>
-          <p class="section-subtitle">Test your skills in C, C++, Java, Python &amp; DSA. Earn XP points and climb the Indian College Leaderboard!</p>
+          <div class="brand-tagline-badge">Code Arena</div>
+          <h2 class="section-title">Interactive Quizzes &amp; College Standings</h2>
+          <p class="section-subtitle">Test conceptual understanding in C, C++, Java, Python &amp; DSA. Earn XP and climb the campus leaderboard.</p>
         </div>
 
         <div class="arena-grid-split">
@@ -258,8 +258,8 @@
           <div class="quiz-card-box">
             <div class="quiz-header-strip">
               <span class="badge badge-bestseller" id="quizTopicBadge">C &amp; C++ Challenge</span>
-              <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary);">
-                ⏱️ 15s Per Question
+              <div style="font-size: 0.775rem; font-family: var(--font-mono); color: var(--text-secondary);">
+                ⏱️ 15s Timer
               </div>
             </div>
 
@@ -268,7 +268,7 @@
               <div class="quiz-timer-bar-fill" id="quizTimerBarFill"></div>
             </div>
 
-            <h3 class="quiz-question-title" id="quizQuestionTitle">Loading question...</h3>
+            <h3 class="quiz-question-title" id="quizQuestionTitle">Loading challenge question...</h3>
             
             <pre class="quiz-code-block" id="quizCodeBlock" style="display: none;"></pre>
 
@@ -276,7 +276,7 @@
 
             <div class="quiz-feedback-box" id="quizFeedbackBox"></div>
 
-            <button class="btn btn-primary" id="quizNextBtn" style="display: none; width: 100%;">
+            <button class="btn btn-outline-primary btn-sm" id="quizNextBtn" style="display: none; width: 100%;">
               Next Challenge Question &rarr;
             </button>
           </div>
@@ -285,10 +285,10 @@
           <div class="leaderboard-card-box">
             <div class="leaderboard-header">
               <div>
-                <h3 style="font-size: 1.15rem; font-weight: 800;">🏆 College Leaderboard</h3>
-                <div style="font-size: 0.775rem; color: var(--text-secondary);">Top Coders Across Indian Campuses</div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #ffffff;">Campus Leaderboard</h3>
+                <div style="font-size: 0.725rem; color: var(--text-muted);">Top Student Engineers</div>
               </div>
-              <span class="badge badge-highest-rated">LIVE</span>
+              <span class="badge badge-bestseller">LIVE</span>
             </div>
 
             <ul class="leaderboard-list" id="collegeLeaderboardList"></ul>
@@ -304,11 +304,11 @@
       <div class="container">
         <div class="section-heading-group" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
           <div>
-            <div class="brand-tagline-badge">⚡ 30-Second Engineering Reels</div>
-            <h2 class="section-title" style="margin-top: 8px;">Quick Concept Hacks in 30 Seconds</h2>
-            <p class="section-subtitle">Byte-sized video explanations on C Pointers, Java Stack vs Heap, Python Lists, C++ STL &amp; DSA.</p>
+            <div class="brand-tagline-badge">30s Micro-Concepts</div>
+            <h2 class="section-title">Engineering Skill Reels</h2>
+            <p class="section-subtitle">Byte-sized architecture and syntax breakdowns in 30 seconds.</p>
           </div>
-          <span style="font-size: 0.85rem; color: var(--primary); font-weight: 700;">Click card to play 📱</span>
+          <span style="font-size: 0.8rem; color: var(--accent-cyan); font-weight: 600;">Click card to launch 📱</span>
         </div>
 
         <div class="reels-grid-track" id="skillReelsGrid"></div>
@@ -319,14 +319,14 @@
     <section class="section" id="skillTabsSection">
       <div class="container">
         <div class="section-heading-group">
-          <div class="brand-tagline-badge">Core Engineering Curriculum</div>
-          <h2 class="section-title" style="margin-top: 8px;">Explore Masterclasses by Subject</h2>
-          <p class="section-subtitle">Structured courses for semester exams, viva voce, and campus recruitment drives.</p>
+          <div class="brand-tagline-badge">Curated Curriculum</div>
+          <h2 class="section-title">Core Placement Masterclasses</h2>
+          <p class="section-subtitle">Comprehensive tracks designed for technical interviews, semester exams, and systems coding.</p>
         </div>
 
         <!-- Subject Tabs -->
         <nav class="skills-tab-nav" aria-label="Subject Topics">
-          <button class="skill-tab-btn active" data-skill="c-cpp">C &amp; C++ Mastery</button>
+          <button class="skill-tab-btn active" data-skill="c-cpp">C &amp; C++ Systems</button>
           <button class="skill-tab-btn" data-skill="java">Java &amp; Spring Boot</button>
           <button class="skill-tab-btn" data-skill="python">Python for Engineers</button>
           <button class="skill-tab-btn" data-skill="dsa">DSA &amp; Placements</button>
@@ -340,7 +340,7 @@
               <h3 class="skill-box-title" id="skillBoxTitle">Master C &amp; C++ Memory Architecture</h3>
               <p class="skill-box-desc" id="skillBoxDesc">Build rock-solid low-level understanding of pointers, dynamic memory allocation, and STL.</p>
             </div>
-            <a href="courses.html?q=c-cpp" class="btn btn-outline" id="skillExploreBtn">Explore All Courses &rarr;</a>
+            <a href="courses.html?q=c-cpp" class="btn btn-outline btn-sm" id="skillExploreBtn">Explore All &rarr;</a>
           </div>
 
           <div class="courses-carousel-track" id="tabCoursesGrid"></div>
@@ -349,11 +349,11 @@
     </section>
 
     <!-- Top Recommendations Grid -->
-    <section class="section" style="background-color: var(--bg-subtle);">
+    <section class="section" style="background: transparent;">
       <div class="container">
         <div class="section-heading-group">
-          <h2 class="section-title">Trending Among Indian Engineering Students</h2>
-          <p class="section-subtitle">Highest rated courses across IITs, NITs, BITS, VIT, and State Universities</p>
+          <h2 class="section-title">Trending Across Indian Tech Campuses</h2>
+          <p class="section-subtitle">Vetted by students from IITs, NITs, BITS, VIT, and leading institutions.</p>
         </div>
         <div class="courses-carousel-track" id="studentsViewingGrid"></div>
       </div>
@@ -363,43 +363,43 @@
     <section class="section">
       <div class="container">
         <div class="section-heading-group">
-          <h2 class="section-title">Core Engineering Branches &amp; Domains</h2>
-          <p class="section-subtitle">Specialized tracks designed for B.Tech, BCA, MCA, and IT Aspirants</p>
+          <h2 class="section-title">Explore by Domain</h2>
+          <p class="section-subtitle">Specialized specializations for software development, systems, and algorithms.</p>
         </div>
         <div class="category-bento-grid" id="topCategoriesBentoGrid"></div>
       </div>
     </section>
 
-    <!-- Teach on Edifyron & INR Earnings Calculator -->
-    <section class="section" id="teachSection" style="background-color: var(--bg-subtle);">
+    <!-- Teach on Edifyron -->
+    <section class="section" id="teachSection">
       <div class="container">
         <div class="cta-banner">
           <div class="cta-banner-image">
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80" alt="Professor teaching">
           </div>
           <div class="cta-banner-content">
-            <div class="brand-tagline-badge" style="margin-bottom: 10px;">Teach &amp; Mentor</div>
-            <h2 class="cta-banner-title">Become an Instructor on Edifyron</h2>
-            <p class="cta-banner-desc">Mentor ambitious Indian engineering students. We provide the curriculum hosting, interactive compiler tools, and direct UPI bank settlements.</p>
+            <div class="brand-tagline-badge">Educator Network</div>
+            <h2 class="cta-banner-title">Mentor on Edifyron</h2>
+            <p class="cta-banner-desc">Share systems engineering and algorithms expertise with thousands of aspiring student developers.</p>
             
             <div class="earnings-calc-box">
-              <div style="font-weight: 700; font-size: 0.9rem;">Estimate your monthly instructor earnings:</div>
+              <div style="font-weight: 600; font-size: 0.85rem; color: var(--text-secondary);">Estimated monthly mentor payout:</div>
               <div class="calc-range-wrapper">
                 <input type="range" id="studentsCountSlider" class="calc-slider" min="100" max="25000" step="100" value="3500">
               </div>
               <div class="calc-result-display">
                 <div>
-                  <div style="font-size: 0.8rem; color: var(--text-secondary);">With an enrolled community of</div>
-                  <strong id="studentsCountDisplay" style="font-size: 1rem; color: var(--text-main);">3,500 students</strong>
+                  <div style="font-size: 0.775rem; color: var(--text-muted);">Enrolled students</div>
+                  <strong id="studentsCountDisplay" style="font-size: 0.95rem; color: #ffffff;">3,500 students</strong>
                 </div>
                 <div style="text-align: right;">
-                  <div style="font-size: 0.8rem; color: var(--text-secondary);">You could earn approximately</div>
+                  <div style="font-size: 0.775rem; color: var(--text-muted);">Estimated earnings</div>
                   <div class="calc-amount" id="monthlyEarningsDisplay">₹12,25,000 / mo</div>
                 </div>
               </div>
             </div>
 
-            <button class="btn btn-primary btn-lg" style="margin-top: 18px;" onclick="store.showToast('Instructor application portal opened! Welcome to Edifyron.', 'success')">Start Teaching &rarr;</button>
+            <button class="btn btn-primary btn-sm" style="margin-top: 16px;" onclick="store.showToast('Mentor application portal opened! Welcome to Edifyron.', 'success')">Apply to Mentor &rarr;</button>
           </div>
         </div>
       </div>
@@ -407,60 +407,60 @@
   </main>
 
   <!-- ==========================================================================
-       FULLSCREEN 9:16 SHORTS VIEWER MODAL
+       FULLSCREEN 9:16 SHORTS VIEWER MODAL (AESTHETIC)
        ========================================================================== -->
   <div class="reel-viewer-modal" id="reelViewerModal">
     <div class="reel-player-container-916">
       <video id="fullscreenReelVideo" class="reel-video-element" loop playsinline></video>
 
       <!-- Top Overlay Controls -->
-      <div style="position: absolute; top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 10;">
-        <span class="badge" style="background: rgba(2, 132, 199, 0.7); color: #ffffff;">⚡ 30s Engineering Hack</span>
+      <div style="position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: center; z-index: 10;">
+        <span class="badge badge-bestseller">⚡ 30s Concept</span>
         <div style="display: flex; gap: 8px;">
-          <button class="btn-ghost" id="reelMuteBtn" style="color: #ffffff; background: rgba(0,0,0,0.5); width: 34px; height: 34px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <button class="btn-ghost" id="reelMuteBtn" style="color: #ffffff; background: rgba(0,0,0,0.6); width: 32px; height: 32px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
           </button>
-          <button class="btn-ghost" id="closeReelModalBtn" style="color: #ffffff; background: rgba(0,0,0,0.5); width: 34px; height: 34px; border-radius: var(--radius-full); font-size: 1.3rem; line-height: 1;">&times;</button>
+          <button class="btn-ghost" id="closeReelModalBtn" style="color: #ffffff; background: rgba(0,0,0,0.6); width: 32px; height: 32px; border-radius: var(--radius-full); font-size: 1.2rem; line-height: 1;">&times;</button>
         </div>
       </div>
 
       <!-- Right Action Rail -->
       <div class="reel-actions-rail">
         <button class="reel-action-btn" id="reelLikeBtn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
           <span class="reel-action-label" id="reelLikesCountDisplay">28.4K</span>
         </button>
 
         <button class="reel-action-btn" onclick="navigator.clipboard.writeText(window.location.href); store.showToast('Reel link copied!', 'success');">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
           <span class="reel-action-label">Share</span>
         </button>
       </div>
 
       <!-- Bottom Info Overlay -->
-      <div class="reel-card-info-bottom" style="padding: 16px; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 100%);">
+      <div class="reel-card-info-bottom" style="padding: 16px; z-index: 10; background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, transparent 100%);">
         <div class="reel-creator-strip" style="margin-bottom: 4px;">
           <img src="" id="modalReelCreatorAvatar" class="reel-creator-pic" alt="">
           <div>
-            <div id="modalReelCreatorName" style="font-weight: 800; font-size: 0.8rem; color: #ffffff;">Instructor</div>
-            <div id="modalReelCreatorHandle" style="font-size: 0.7rem; color: #38bdf8;">@handle</div>
+            <div id="modalReelCreatorName" style="font-weight: 700; font-size: 0.8rem; color: #ffffff;">Instructor</div>
+            <div id="modalReelCreatorHandle" style="font-size: 0.675rem; color: var(--accent-cyan);">@handle</div>
           </div>
         </div>
-        <h3 id="modalReelTitle" style="font-size: 0.9rem; font-weight: 800; color: #ffffff; margin-bottom: 4px;"></h3>
-        <p id="modalReelDesc" style="font-size: 0.775rem; color: #cbd5e1; line-height: 1.35; margin-bottom: 10px;"></p>
+        <h3 id="modalReelTitle" style="font-size: 0.875rem; font-weight: 700; color: #ffffff; margin-bottom: 4px;"></h3>
+        <p id="modalReelDesc" style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.35; margin-bottom: 10px;"></p>
         
         <a href="" id="modalReelRelatedCourseBtn" class="btn btn-primary btn-sm" style="width: 100%;">
-          🎓 View Full Masterclass &rarr;
+          View Masterclass &rarr;
         </a>
       </div>
 
       <!-- Up / Down Navigation Arrows -->
       <div class="reel-navigation-buttons">
         <button class="reel-nav-btn" id="prevReelBtn" title="Previous Reel (Up Arrow)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
         </button>
         <button class="reel-nav-btn" id="nextReelBtn" title="Next Reel (Down Arrow)">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
       </div>
     </div>
@@ -470,12 +470,12 @@
   <div class="modal-overlay" id="checkoutModal">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 class="modal-title">Secure Checkout (UPI &amp; Cards)</h3>
+        <h3 class="modal-title">Checkout (UPI &amp; Cards)</h3>
         <button class="modal-close-btn">&times;</button>
       </div>
       <div class="modal-body">
-        <div style="background-color: var(--bg-subtle); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 16px;">
-          <h4 style="font-size: 0.9rem; font-weight: 800; margin-bottom: 8px; color: var(--primary);">Order Summary (INR)</h4>
+        <div style="background-color: rgba(255, 255, 255, 0.03); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); margin-bottom: 16px;">
+          <h4 style="font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; color: var(--accent-cyan);">Order Summary</h4>
           <div id="checkoutModalItems"></div>
           <div id="checkoutModalTotal"></div>
         </div>
@@ -484,7 +484,7 @@
           <div class="form-group">
             <label class="form-label">Payment Method</label>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px;">
-              <button type="button" class="btn btn-outline btn-sm active" style="border-color: var(--primary); background-color: var(--primary-light); color: var(--primary); font-weight: 800;">⚡ UPI (GPay/PhonePe)</button>
+              <button type="button" class="btn btn-outline btn-sm active" style="border-color: var(--accent-cyan); background-color: var(--accent-cyan-dim); color: var(--accent-cyan); font-weight: 700;">⚡ UPI</button>
               <button type="button" class="btn btn-outline btn-sm">💳 Cards</button>
               <button type="button" class="btn btn-outline btn-sm">🏦 NetBanking</button>
             </div>
@@ -507,57 +507,57 @@
   <footer class="edifyron-footer">
     <div class="container">
       <div class="footer-top-strip">
-        <div style="font-weight: 700; font-size: 0.95rem;">
-          Trusted by engineering students across <span style="color: #38bdf8;">IITs, NITs, BITS, and 500+ Indian Universities</span>.
+        <div style="font-weight: 600; font-size: 0.9rem; color: var(--text-secondary);">
+          Engineered for students across <span style="color: #ffffff;">IITs, NITs, BITS, and premier Indian technical universities</span>.
         </div>
-        <div style="display: flex; gap: 20px; opacity: 0.8; align-items: center; font-size: 0.9rem; font-weight: 800;">
+        <div style="display: flex; gap: 16px; opacity: 0.6; align-items: center; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;">
           <span>IIT BOMBAY</span>
           <span>NIT TRICHY</span>
           <span>BITS PILANI</span>
-          <span>VIT VELLORE</span>
-          <span>DTU DELHI</span>
+          <span>VIT</span>
+          <span>DTU</span>
         </div>
       </div>
 
       <div class="footer-nav-grid">
         <div>
-          <h4 class="footer-col-title">Core Languages</h4>
+          <h4 class="footer-col-title">Core Tracks</h4>
           <ul class="footer-links-list">
             <li><a href="courses.html?category=programming&sub=c-cpp" class="footer-link">C &amp; C++ Programming</a></li>
             <li><a href="courses.html?category=programming&sub=java" class="footer-link">Java &amp; Spring Boot</a></li>
             <li><a href="courses.html?category=programming&sub=python" class="footer-link">Python for Engineers</a></li>
-            <li><a href="courses.html?category=dsa-placements" class="footer-link">DSA &amp; LeetCode</a></li>
-            <li><a href="#" class="footer-link replay-intro-btn">🎬 Replay Intro Video</a></li>
+            <li><a href="courses.html?category=dsa-placements" class="footer-link">DSA Placement Prep</a></li>
+            <li><a href="#" class="footer-link replay-intro-btn">🎬 Replay Brand Intro</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Interactive Arena</h4>
+          <h4 class="footer-col-title">Arena</h4>
           <ul class="footer-links-list">
             <li><a href="#arenaSection" class="footer-link">Daily Code Quizzes</a></li>
-            <li><a href="#arenaSection" class="footer-link">College Leaderboard</a></li>
-            <li><a href="#skillReelsSection" class="footer-link">30s Skill Reels</a></li>
-            <li><a href="player.html?id=c1" class="footer-link">My Classroom</a></li>
+            <li><a href="#arenaSection" class="footer-link">Campus Leaderboard</a></li>
+            <li><a href="#skillReelsSection" class="footer-link">30s Micro Reels</a></li>
+            <li><a href="player.html?id=c1" class="footer-link">Classroom Portal</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Placement Prep</h4>
+          <h4 class="footer-col-title">Core CS</h4>
           <ul class="footer-links-list">
             <li><a href="courses.html?category=core-cs&sub=dbms" class="footer-link">DBMS &amp; SQL Queries</a></li>
             <li><a href="courses.html?category=core-cs&sub=os" class="footer-link">Operating Systems &amp; Linux</a></li>
             <li><a href="courses.html?category=core-cs" class="footer-link">Computer Networks</a></li>
-            <li><a href="courses.html" class="footer-link">TCS &amp; FAANG Coding Rounds</a></li>
+            <li><a href="courses.html" class="footer-link">Interview Question Bank</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-col-title">Company</h4>
+          <h4 class="footer-col-title">Platform</h4>
           <ul class="footer-links-list">
-            <li><a href="#" class="footer-link">About Edifyron India</a></li>
-            <li><a href="#" class="footer-link">Careers</a></li>
+            <li><a href="#" class="footer-link">About Edifyron</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
             <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">Terms &amp; Support</a></li>
+            <li><a href="#" class="footer-link">Support &amp; FAQ</a></li>
           </ul>
         </div>
       </div>
@@ -566,7 +566,7 @@
         <div class="footer-logo-brand">
           <img src="assets/edifyron-logo.jpg" alt="Edifyron Logo" class="footer-logo-img">
           <div>
-            <div style="font-size: 1.15rem; font-weight: 900; font-family: var(--font-heading);">EDIFYRON</div>
+            <div style="font-size: 1.1rem; font-weight: 900; font-family: var(--font-heading); color: #ffffff;">EDIFYRON</div>
             <div class="footer-tagline">THE FUTURE STARTS HERE</div>
           </div>
         </div>
@@ -576,7 +576,7 @@
         </div>
 
         <div>
-          <span class="badge" style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; color: #38bdf8;">🇮🇳 MADE IN INDIA &bull; MADE FOR INDIA</span>
+          <span class="badge badge-bestseller">🇮🇳 MADE IN INDIA &bull; MADE FOR INDIA</span>
         </div>
       </div>
     </div>

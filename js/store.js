@@ -377,7 +377,7 @@ class EdifyronStore {
 
   // --- THEME ---
   getTheme() {
-    return localStorage.getItem(STORAGE_KEYS.THEME) || "light"; // Default clean bright
+    return localStorage.getItem(STORAGE_KEYS.THEME) || "dark"; // Default aesthetic obsidian dark
   }
 
   setTheme(theme) {
